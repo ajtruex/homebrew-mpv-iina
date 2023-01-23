@@ -13,7 +13,9 @@ class MpvIina < Formula
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.9" => :build
-  depends_on xcode: :build
+  on_intel do
+    depends_on "nasm" => :build
+  end
 
   depends_on "ffmpeg-iina"
   depends_on "jpeg"
